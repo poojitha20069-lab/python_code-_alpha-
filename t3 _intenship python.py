@@ -1,9 +1,10 @@
 import os
 import shutil
 
-source_folder = r"C:\Users\pooji\OneDrive\Pictures\Camera Roll"
-destination_folder = r"C:\Users\pooji\OneDrive\Pictures\destination"
+source_folder = "source_images"
+destination_folder = "destination_images"
 
+os.makedirs(source_folder, exist_ok=True)
 os.makedirs(destination_folder, exist_ok=True)
 
 for file in os.listdir(source_folder):
@@ -13,5 +14,5 @@ for file in os.listdir(source_folder):
             os.path.join(destination_folder, file)
         )
         print("Moved:", file)
-        
-print("All JPG files moved successfully!")
+
+print("Done!")
